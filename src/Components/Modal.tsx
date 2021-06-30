@@ -54,6 +54,16 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 		}
 	}
 
+
+
+	public componentWillReceiveProps(nextProps: any) : void {
+        if (this.props.selected != nextProps.selected && !nextProps.selected) {
+            this.setState({
+                selectedObject: {} as IModalListInDto,
+            });
+        }
+    }
+
 	private _openModal(): void {
 		const { items, autoGenerateAlphabeticalIndex, disabled, sortingLanguage } = this.props;
 		if (autoGenerateAlphabeticalIndex) {
