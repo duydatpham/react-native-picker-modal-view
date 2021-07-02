@@ -57,9 +57,9 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 
 
 	public componentWillReceiveProps(nextProps: any) : void {
-        if (this.props.selected != nextProps.selected && !nextProps.selected) {
+        if (this.props.selected != nextProps.selected) {
             this.setState({
-                selectedObject: {} as IModalListInDto,
+				selectedObject: (nextProps.selected || {}) as IModalListInDto,
             });
         }
     }

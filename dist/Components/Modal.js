@@ -44,9 +44,9 @@ export class ModalComponent extends React.PureComponent {
         }
     }
     componentWillReceiveProps(nextProps) {
-        if (this.props.selected != nextProps.selected && !nextProps.selected) {
+        if (this.props.selected != nextProps.selected) {
             this.setState({
-                selectedObject: {},
+                selectedObject: (nextProps.selected || {}),
             });
         }
     }
