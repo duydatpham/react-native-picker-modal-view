@@ -90,6 +90,13 @@ export class ModalComponent extends React.PureComponent {
             });
         }
     }
+	
+	reset() {
+		this.setState({
+            selectedObject: {},
+        });
+        this.clearComponent();
+	}
     _onClose() {
         const { onClosed, onSelected, requireSelection, selected } = this.props;
         const { modalVisible, selectedObject } = this.state;
