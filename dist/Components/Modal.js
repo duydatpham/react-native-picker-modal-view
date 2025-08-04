@@ -100,6 +100,13 @@ export class ModalComponent extends React.PureComponent {
             onClosed();
         }
     }
+	reset() {
+		this.setState({
+            selectedObject: {},
+        });
+        this.clearComponent();
+	}
+	
     onClose() {
         this._onClose();
     }
