@@ -191,6 +191,13 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 		}
 	}
 
+	public reset(): void {
+		this.setState({
+            selectedObject: {} as IModalListInDto,
+        });
+        this.clearComponent();
+	}
+
 	public onClose(): void {
 		this._onClose();
 	}
